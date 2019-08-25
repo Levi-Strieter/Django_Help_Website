@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+.card {
+  margin: 30px; 
+  display: inline-block;
+
+}
+
+</style>
+
+<div class="card border-success mb-3" style="max-width: 18rem;">
+    <div class="card-header bg-transparent border-success">Upload Video</div>
+    <div class="card-body text-success">
+      <h5 class="card-title">Logged in as {{ user.get_full_name|default:user.username }}</h5>
+      <p class="card-text">Upload video to be posted for all the world to see?.</p>
+    </div>
+    <div class="card-footer bg-transparent border-success"><button type="button" class="btn btn-danger"><a href="/core/video_upload">Uplaod </a><i class="fas fa-upload"></i>
+
+    </button>
+    </div>
+  </div>
+
+  <div class="card border-success mb-3" style="max-width: 18rem;">
+    <div class="card-header bg-transparent border-success">Check Asked questions </div>
+    <div class="card-body text-success">
+      <h5 class="card-title">Logged in as {{ user.get_full_name|default:user.username }}</h5>
+      <p class="card-text">Check asked questions.</p>
+    </div>
+    <div class="card-footer bg-transparent border-success"><button type="button" class="btn btn-danger"><a href="/core/asked_questions">Continue </a><i class="fas fa-arrow-right"></i>
+
+    </button>
+    </div>
+  </div>
+
+
+
+  <div class="card border-success mb-3" style="max-width: 18rem;">
+    <div class="card-header bg-transparent border-success">Upload FAQ answer</div>
+    <div class="card-body text-success">
+      <h5 class="card-title">Logged in as {{ user.get_full_name|default:user.username }}</h5>
+      <p class="card-text">Upload FAQ answer to be posted for all the world to see?.</p>
+    </div>
+    <div class="card-footer bg-transparent border-success"><button type="button" class="btn btn-danger"><a href="/core/FAQ_upload">Answer </a><i class="fas fa-upload"></i>
+
+    </button>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

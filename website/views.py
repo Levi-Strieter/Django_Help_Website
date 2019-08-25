@@ -102,3 +102,16 @@ def delete_model(request, id):
 
 def video(request):
     return render(request, 'website/videos.html')
+
+@login_required
+def team_homepage(request):
+    return render(request, 'website/team_page.html')
+
+@login_required
+def video_upload(request):
+    return render(request, 'website/video_upload.html')
+
+@login_required
+def FAQ_upload(request):
+    return render(request, 'website/FAQ_upload.html')
+

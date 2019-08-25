@@ -1,1 +1,3 @@
-# Django_Help_Website
+# Django Help Website for Cabell County Schools
+
+
