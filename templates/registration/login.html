@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load widget_tweaks %}
+
+<style>
+
+.card{
+  margin: 100px 35% 250px 35%;
+}
+
+p {
+  text-align: center;
+}
+
+.md-form td {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+
+.md-form {
+  padding: 14px;
+}
+
+</style>
+<!-- {% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+  {% else %}
+    <p>Please login to see this page.</p>
+  {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<table>
+
+<tr>
+  <td>{{ form.username.label_tag }}</td>
+  <td>{{ form.username }}</td>
+</tr>
+
+<tr>
+  <td>{{ form.password.label_tag }}</td>
+  <td>{{ form.password }}</td>
+</tr>
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+ Material form login -->
+<div class="card">
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+  
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+    {% else %}
+      <p>Please login to see this page.</p>
+    {% endif %}
+  {% endif %}   
+
+
+
+  <h5 class="card-header info-color white-text text-center py-4">
+    <strong>Sign in</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+
+    <!-- Form -->
+    <form class="text-center" style="color: #757575;" action="." method="POST">
+      {% csrf_token %}
+      <!-- Email -->
+      <div class="md-form">
+        {{ form.username|add_class:"form-control" }}
+        <label for="materialLoginFormPassword">Username</label>
+      </div>
+
+      <!-- Password -->
+      <div class="md-form">
+          {% render_field form.password|add_class:"form-control"%}
+          <label for="materialLoginFormPassword">Password</label>
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <div>
+          <!-- Remember me -->
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+            <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
+          </div>
+        </div>
+        <div>
+          <!-- Forgot password -->
+          <a href="{% url 'password_reset' %}">Forgot password?</a>
+        </div>
+      </div>
+
+      <!-- Sign in button -->
+      <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+
+
+    </form>
+    <!-- Form -->
+
+  </div>
+
+</div>
+<!-- Material form login -->
+
+{% endblock %}

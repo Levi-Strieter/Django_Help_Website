@@ -1,0 +1,23 @@
+html, body {
+    color: #ecf0f1;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0%;
+}
+
+
+.navbar {
+    background-color: #2f3640;
+}
+
+.btn {
+    color: #44bd32;
+
+}
+
+a {
+    color: #44bd32;
+}
+
+a .hover {
+    color: #4cd137;
+}

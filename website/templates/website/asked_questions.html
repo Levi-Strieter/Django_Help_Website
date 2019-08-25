@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+h1{
+    text-align: center;
+}
+
+.card {
+  margin: 30px; 
+  display: inline-block;
+
+}
+
+.card-header {
+  text-align: center;
+
+}
+</style>
+
+
+
+<h1>asked questions</h1>
+
+{% for data in data %}
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+
+        <div class="card-header">{{ data.subject }}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ data.name }}</h5>
+          <p class="card-text">email - {{ data.email }}</p>
+          <p class="card-text">room number - {{ data.room_number }}</p>
+          <p class="card-text">when - {{ data.when }}</p>
+          <br>
+          <p class="card-text">description - {{ data.description }}</p>
+        </div>
+    </div>
+{% endfor %}
+  
+
+{% endblock %}
