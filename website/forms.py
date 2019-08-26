@@ -9,9 +9,14 @@ import datetime
 #     when = forms.DateField(initial=datetime.date.today)
     
 from django.forms import ModelForm
-from .models import HelpFormModel
+from .models import HelpFormModel, FaqFormModel
  
 class HelpForm(ModelForm):
     class Meta:
         model = HelpFormModel
         fields = ['your_name', 'room_number', 'email', 'subject', 'description', 'when']
+
+class FaqForm(ModelForm):
+    class Meta:
+        model = FaqFormModel
+        fields = ['subject', 'answer', 'date_uploaded']

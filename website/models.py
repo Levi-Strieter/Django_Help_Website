@@ -1,7 +1,7 @@
 from django.db import models
 from django.forms import ModelForm
 from django.contrib.auth.models import User
-from django.utils import timezone
+from django.utils.timezone import now
 
 # Create your models here.
 
@@ -20,7 +20,16 @@ class HelpFormModel(models.Model):
     email = models.EmailField()
     subject = models.CharField(max_length=30)
     description = models.CharField(max_length=50)
-    when = models.DateField(default=timezone.now())
+    when = models.DateField(default=now())
 
-    def __str__(self):
-        return self.name
+    def __unicode__(self):
+        return self.Name + ": " +str(self.id)
+
+
+class FaqFormModel(models.Model):
+    subject = models.CharField(max_length=30)
+    answer = models.CharField(max_length=50)
+    date_uploaded = models.DateField(default=now())
+
+    def __unicode__(self):
+        return self.Name + ": " +str(self.id)

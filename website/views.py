@@ -5,8 +5,8 @@ from django.utils import timezone
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .forms import HelpForm
-from .models import HelpFormModel
+from .forms import HelpForm, FaqForm
+from .models import HelpFormModel, FaqFormModel
 
 # Create your views here.
 
@@ -88,17 +88,21 @@ def help_form(request):
  
         return render(request, "website/help_form.html", {'form': form})
 
-
-def delete_model(request, id):
-    obj = get_object_or_404(HelpFormModel, id=id)
-
-    if request.method == 'POST':
-        obj.delete()
-
-    context = {
-        'object': obj
-    }
-    return render(request, 'website/asked_questions.html', context)
+@login_required
+def FAQ_upload(request):
+    if request.method == "POST":
+        form = FaqForm(request.POST)
+        if form.is_valid():
+            model_instance = form.save(commit=False)
+            model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return redirect('/core/thanks/')
+ 
+    else:
+ 
+        form = FaqForm()
+ 
+        return render(request, "website/FAQ_upload.html", {'form': form})
 
 def video(request):
     return render(request, 'website/videos.html')
@@ -110,8 +114,3 @@ def team_homepage(request):
 @login_required
 def video_upload(request):
     return render(request, 'website/video_upload.html')
-
-@login_required
-def FAQ_upload(request):
-    return render(request, 'website/FAQ_upload.html')
-

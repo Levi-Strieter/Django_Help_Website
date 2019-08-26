@@ -1,0 +1,8 @@
+# django stuff
+migrations 
+
+# python stuff
+__pycache__
+.pyc
+
+
