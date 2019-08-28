@@ -10,7 +10,7 @@
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="{% static 'core/img/avataaars.png' %}" alt="">
+      <img class="masthead-avatar mb-5" src="{% static 'core/img/logo2.png' %}" alt="">
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0">Core Help</h1>
@@ -132,7 +132,7 @@
     <div class="container">
 
       <!-- About Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-white">Live Help Instructions</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-white">Ask A Question</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom divider-light">
@@ -146,18 +146,18 @@
       <!-- About Section Content -->
       <div class="row">
         <div class="col-lg-4 ml-auto">
-          <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
+          <p class="lead">When asking a question on the official Core Help website you will get one of the Core Help members back with you faster than a personalized email. Although, before asking a question we kindly ask you to check the FAQ section and Tutorial Videos for an answer. Thank You!</p>
         </div>
         <div class="col-lg-4 mr-auto">
-          <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
+          <p class="lead">When asking a question please have the following in mind: Subject of the question (ex. Keynote), and a quality description of the problem. Please avoid using, "It will not work," but instead, "In Clips I click the big pink button but It will still not record."</p>
         </div>
       </div>
 
       <!-- About Section Button -->
       <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
-          <i class="fas fa-download mr-2"></i>
-          Call Now
+        <a class="btn btn-xl btn-outline-light" href="/core/help_form">
+          <i class="fas fa-arrow-right"></i>
+          Continue
         </a>
       </div>
 
@@ -206,12 +206,8 @@
 
   <!--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>-->
 
-  <!-- Contact Form JavaScript -->
-  <script src="{% static 'core/js/JBootstrapValidation.js' %}"></script>
-  <script src="{% static 'core/js/contact_me.js' %}"></script>
-
   <!-- Custom scripts for this template -->
-  <script src="{% static 'js/freelancer.js' %}"></script>
+  <script src="{% static 'core/js/freelancer.js' %}"></script>
 
 
 {% csrf_token %}

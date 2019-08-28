@@ -1,8 +1,6 @@
 from django.urls import path
 from django.conf.urls import url
 
-
-
 from . import views
 
 urlpatterns = [
@@ -13,6 +11,7 @@ urlpatterns = [
     path('thanks/', views.thanks),
     path('videos/', views.video),
     path('dashboard/', views.team_homepage),
-    path('video_upload', views.video_upload),
-    path('FAQ_upload', views.FAQ_upload),
+    path('video_upload/', views.video_upload),
+    path('FAQ_upload/', views.FAQ_upload),
+    path('about_us', views.about_us),
 ]

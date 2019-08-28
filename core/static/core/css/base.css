@@ -8,16 +8,3 @@ html, body {
 .navbar {
     background-color: #2f3640;
 }
-
-.btn {
-    color: #44bd32;
-
-}
-
-a {
-    color: #44bd32;
-}
-
-a .hover {
-    color: #4cd137;
-}

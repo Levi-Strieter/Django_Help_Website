@@ -1,11 +1,9 @@
-FROM python:3.4
+FROM python:3.7
 
 # Install all debian packages
 RUN apt-get update && apt-get install -y \
 	gcc \
 	python-dev \
-	mysql-client libmysqlclient-dev \
-	postgresql-client libpq-dev \
 	sqlite3 \
 	vim net-tools \
 	--no-install-recommends && rm -rf /var/lib/apt/lists/*
@@ -26,8 +24,8 @@ RUN ln -sf /dev/stdout /var/log/uwsgi/djangoapp.log \
 	&& ln -sf /dev/stdout /var/log/uwsgi/emperor.log
 
 # Collect django static files and then copy them to the shared volume directory
-RUN python files_manage.py --settings=apple_tech.settings.dev collectstatic --noinput &&\
-	cp -r files_django/static_root /shared/
+RUN python manage.py collectstatic --noinput &&\
+	cp -r apple_tech/static_root /shared/
 
 VOLUME /shared
 

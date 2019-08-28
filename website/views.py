@@ -5,22 +5,17 @@ from django.utils import timezone
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .forms import HelpForm, FaqForm
-from .models import HelpFormModel, FaqFormModel
+from .forms import HelpForm, FaqForm, VideoForm
+from .models import HelpFormModel, FaqFormModel, VideoFormModel
 
 # Create your views here.
-
-def function(request,part_id =None):
-    object = HelpFormModel.objects.get(id=part_id)
-    object.delete()
-    return render(request,'/core/asked_questions')
 
 def thanks(request):
     return render(request, 'website/thanks.html')
 
-
 def index(request):
     return render(request, 'website/index.html')
+
 
 @login_required
 def asked_questions(request):
@@ -33,45 +28,19 @@ def asked_questions(request):
 
     return render(request, 'website/asked_questions.html', context)
 
+def about_us(request):
+    return render(request, 'website/about_us.html')
+
 def FAQ(request):
-    return render(request, 'website/FAQ.html')
 
+    data = FaqFormModel.objects.all()
 
+    context = {
+        'data': data,
+    }
 
-# def help_form(request):
-    # # if this is a POST request we need to process the form data
-    # if request.method == 'POST':
-    #     # create a form instance and populate it with data from the request:
-    #     form = HelpForm(request.POST)
-        
-    #     # check whether it's valid:
-    #     if form.is_valid():
-    #         # process the data in form.cleaned_data as required
-    #         name = form.cleaned_data['your_name']
-    #         room_number = form.cleaned_data['room_number']
-    #         email = form.cleaned_data['email']
-    #         when = form.cleaned_data['when']
-    #         subject = form.cleaned_data['subject']
-    #         description = form.cleaned_data['description']
+    return render(request, 'website/FAQ.html', context)
 
-    #         context = {
-    #             'name': name,
-    #             'room_number': room_number,
-    #             'email': email,
-    #             'when': when,
-    #             'subject': subject,
-    #             'description': description,
-    #         }
-
-    #         # redirect to a new URL: 
-    #         return render(request, 'website/asked_questions.html', context)
-
-
-    # # if a GET (or any other method) we'll create a blank form
-    # else:
-    #     form = HelpForm()
-
-    # return render(request, 'website/help_form.html', {'form':form})
 
 def help_form(request):
     if request.method == "POST":
@@ -105,7 +74,14 @@ def FAQ_upload(request):
         return render(request, "website/FAQ_upload.html", {'form': form})
 
 def video(request):
-    return render(request, 'website/videos.html')
+
+    data = VideoFormModel.objects.all()
+
+    context = {
+        'data': data,
+    }
+
+    return render(request, 'website/videos.html', context)
 
 @login_required
 def team_homepage(request):
@@ -113,4 +89,16 @@ def team_homepage(request):
 
 @login_required
 def video_upload(request):
-    return render(request, 'website/video_upload.html')
+    if request.method == "POST":
+        form = VideoForm(request.POST)
+        if form.is_valid():
+            model_instance = form.save(commit=False)
+            model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return redirect('/core/thanks/')
+ 
+    else:
+ 
+        form = VideoForm()
+ 
+        return render(request, "website/video_upload.html", {'form': form})

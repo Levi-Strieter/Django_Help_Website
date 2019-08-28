@@ -11,7 +11,8 @@ h1{
 .card {
   margin: 30px; 
   display: inline-block;
-
+  width: 400px;
+  height: 400px;
 }
 
 .card-header {
@@ -25,7 +26,7 @@ h1{
 <h1>asked questions</h1>
 
 {% for data in data %}
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+<div class="card bg-light mb-3" style="max-width: 18rem;">
 
         <div class="card-header">{{ data.subject }}</div>
         <div class="card-body">

@@ -13,23 +13,42 @@ from django.utils.timezone import now
 # user.last_name = 'Citizen'
 # user.save()
 
+FAQ_CHOICES = (
+    ('ipad', 'Ipad'),
+    ('mac', 'Mac'),
+    ('keynote', 'Keynote'),
+    ('pages', 'Pages'),
+    ('imovie', 'Imovie'),
+    ('schoology', 'Schoology'),
+    ('other', 'Other'),
+)
+
 
 class HelpFormModel(models.Model):
     your_name = models.CharField(max_length=100)
     room_number = models.CharField(max_length=6)
-    email = models.EmailField()
+    email = models.EmailField(default="@k12.wv.us")
     subject = models.CharField(max_length=30)
     description = models.CharField(max_length=50)
-    when = models.DateField(default=now())
+    date_uploaded = models.DateField(default=now())
 
     def __unicode__(self):
         return self.Name + ": " +str(self.id)
 
 
 class FaqFormModel(models.Model):
-    subject = models.CharField(max_length=30)
+    subject = models.CharField(max_length=10, choices=FAQ_CHOICES, default="other")
+    question = models.CharField(max_length=50, default="")
     answer = models.CharField(max_length=50)
     date_uploaded = models.DateField(default=now())
+
+    def __unicode__(self):
+        return self.Name + ": " +str(self.id)
+
+
+class VideoFormModel(models.Model):
+    youtube_unique_code = models.URLField(max_length=11)
+    vid_name = models.CharField(max_length=20, blank=False, default="Core Help-")
 
     def __unicode__(self):
         return self.Name + ": " +str(self.id)

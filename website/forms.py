@@ -9,14 +9,19 @@ import datetime
 #     when = forms.DateField(initial=datetime.date.today)
     
 from django.forms import ModelForm
-from .models import HelpFormModel, FaqFormModel
+from .models import HelpFormModel, FaqFormModel, VideoFormModel
  
 class HelpForm(ModelForm):
     class Meta:
         model = HelpFormModel
-        fields = ['your_name', 'room_number', 'email', 'subject', 'description', 'when']
+        fields = ['your_name', 'room_number', 'email', 'subject', 'description', 'date_uploaded']
 
 class FaqForm(ModelForm):
     class Meta:
         model = FaqFormModel
-        fields = ['subject', 'answer', 'date_uploaded']
+        fields = ['subject', 'question', 'answer', 'date_uploaded']
+
+class VideoForm(ModelForm):
+    class Meta:
+        model = VideoFormModel
+        fields = ['youtube_unique_code', 'vid_name']

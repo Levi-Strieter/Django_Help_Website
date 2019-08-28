@@ -1,26 +1,294 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% block content %}
 
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          Collapsible Group Item #1
-        </button>
-      </h2>
-    </div>
+<style>
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  span {
+    font-size: 15px;
+  }
+
+
+  .box {
+    padding: 60px 0px;
+  }
+
+  .box-part{
+    background: #FFF;
+    border-radius: 0;
+    padding: 60px 10px;
+    margin: 30px 0px;
+  }
+
+  .text {
+    margin: 20px 0px;
+  }
+
+  .center {
+    text-align: center;
+    
+  }
+  </style>
+
+<div class="center"></div>
+<div class="box-part text-center">
+  
+  <div class="title">
+    <h4>Ipad</h4>
+  </div>
+  <div class="text">
+    <span>Upload video to be posted for all the world to see?.</span>
+  </div>
+  
+    {% for data in data %}
+    
+      {% if data.subject == "Ipad" %}
+      
+        
+          <div class="contaienr">
+            <div class="accordian">
+              <button class="accordion text-center">{{ data.question }}</button>
+              <div class="panel">
+                <p>{{ data.answer }}</p>
+                <br>
+                <p>{{ data.date_uploaded }}</p>
+              </div>
+            
+            </div>
+          </div>
+      {% endif %}
+    {% endfor %}
+  
+</div>
+
+
+  <div class="center"></div>
+    <div class="box-part text-center">
+      
+      <div class="title">
+        <h4>Mac</h4>
       </div>
+      <div class="text">
+        <span>Upload video to be posted for all the world to see?.</span>
+      </div>
+      
+        {% for data in data %}
+        
+          {% if data.subject == "mac" %}
+          
+            
+              <div class="contaienr">
+                <div class="accordian">
+                  <button class="accordion text-center">{{ data.question }}</button>
+                  <div class="panel">
+                    <p>{{ data.answer }}</p>
+                    <br>
+                    <p>{{ data.date_uploaded }}</p>
+                  </div>
+                
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      
     </div>
-  </div>  
+  
+    <div class="center"></div>
+    <div class="box-part text-center">
+      
+      <div class="title">
+        <h4>Keynote</h4>
+      </div>
+      <div class="text">
+        <span>Upload video to be posted for all the world to see?.</span>
+      </div>
+      
+        {% for data in data %}
+        
+          {% if data.subject == "keynote" %}
+          
+            
+              <div class="contaienr">
+                <div class="accordian">
+                  <button class="accordion text-center">{{ data.question }}</button>
+                  <div class="panel">
+                    <p>{{ data.answer }}</p>
+                    <br>
+                    <p>{{ data.date_uploaded }}</p>
+                  </div>
+                
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      
+    </div>
 
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+    <div class="center"></div>
+    <div class="box-part text-center">
+      
+      <div class="title">
+        <h4>Pages</h4>
+      </div>
+      <div class="text">
+        <span>Upload video to be posted for all the world to see?.</span>
+      </div>
+      
+        {% for data in data %}
+        
+          {% if data.subject == "pages" %}
+          
+            
+              <div class="contaienr">
+                <div class="accordian">
+                  <button class="accordion text-center">{{ data.question }}</button>
+                  <div class="panel">
+                    <p>{{ data.answer }}</p>
+                    <br>
+                    <p>{{ data.date_uploaded }}</p>
+                  </div>
+                
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      
+    </div>
+
+    <div class="center"></div>
+    <div class="box-part text-center">
+      
+      <div class="title">
+        <h4>Imovie</h4>
+      </div>
+      <div class="text">
+        <span>Upload video to be posted for all the world to see?.</span>
+      </div>
+      
+        {% for data in data %}
+        
+          {% if data.subject == "imovie" %}
+          
+            
+              <div class="contaienr">
+                <div class="accordian">
+                  <button class="accordion text-center">{{ data.question }}</button>
+                  <div class="panel">
+                    <p>{{ data.answer }}</p>
+                    <br>
+                    <p>{{ data.date_uploaded }}</p>
+                  </div>
+                
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      
+    </div>
+
+    <div class="center"></div>
+    <div class="box-part text-center">
+      
+      <div class="title">
+        <h4>Schoology</h4>
+      </div>
+      <div class="text">
+        <span>Upload video to be posted for all the world to see?.</span>
+      </div>
+      
+        {% for data in data %}
+        
+          {% if data.subject == "schoology" %}
+          
+            
+              <div class="contaienr">
+                <div class="accordian">
+                  <button class="accordion text-center">{{ data.question }}</button>
+                  <div class="panel">
+                    <p>{{ data.answer }}</p>
+                    <br>
+                    <p>{{ data.date_uploaded }}</p>
+                  </div>
+                
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      
+    </div>
+  
+
+    <div class="center"></div>
+    <div class="box-part text-center">
+      
+      <div class="title">
+        <h4>Other</h4>
+      </div>
+      <div class="text">
+        <span>Upload video to be posted for all the world to see?.</span>
+      </div>
+      
+        {% for data in data %}
+        
+          {% if data.subject == "schoology" %}
+          
+            
+              <div class="contaienr">
+                <div class="accordian">
+                  <button class="accordion text-center">{{ data.question }}</button>
+                  <div class="panel">
+                    <p>{{ data.answer }}</p>
+                    <br>
+                    <p>{{ data.date_uploaded }}</p>
+                  </div>
+                
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      
+    </div>
+  
+
+  <script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
 {% endblock %}
