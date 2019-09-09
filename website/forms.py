@@ -24,4 +24,9 @@ class FaqForm(ModelForm):
 class VideoForm(ModelForm):
     class Meta:
         model = VideoFormModel
-        fields = ['youtube_unique_code', 'vid_name']
+        fields = ['subject', 'youtube_unique_code', 'vid_name']
+
+# class FaqLikeForm(ModelForm):
+#     class Meta:
+#         model = FaqLikeModel
+#         fields = ['like', 'dislike']

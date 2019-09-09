@@ -23,6 +23,11 @@ FAQ_CHOICES = (
     ('other', 'Other'),
 )
 
+LIKE_DISLIKE = (
+    ('like', 'Like'),
+    ('dislike', "Dislike"),
+)
+
 
 class HelpFormModel(models.Model):
     your_name = models.CharField(max_length=100)
@@ -47,8 +52,16 @@ class FaqFormModel(models.Model):
 
 
 class VideoFormModel(models.Model):
-    youtube_unique_code = models.URLField(max_length=11)
+    subject = models.CharField(max_length=10, choices=FAQ_CHOICES, default="other")
+    youtube_unique_code = models.CharField(max_length=11)
     vid_name = models.CharField(max_length=20, blank=False, default="Core Help-")
 
     def __unicode__(self):
         return self.Name + ": " +str(self.id)
+
+# class FaqLikeModel(models.Model):
+#     like = models.CharField(max_length=8,  choices=LIKE_DISLIKE, widget=forms)
+#     dislike = models.CharField(max_length=8,  choices=LIKE_DISLIKE)
+
+#     def __unicode__(self):
+#         return self.Name + ": " +str(self.id)

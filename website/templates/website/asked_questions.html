@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load custom_time_tags %}
 
 {% block content %}
 
@@ -24,21 +25,40 @@ h1{
 
 
 <h1>asked questions</h1>
+ 
+{% get_today as today %}
+
 
 {% for data in data %}
-<div class="card bg-light mb-3" style="max-width: 18rem;">
+  {% if today == data.date_uploaded %}
+  <div class="card bg-light mb-3" style="max-width: 18rem;">
 
-        <div class="card-header">{{ data.subject }}</div>
-        <div class="card-body">
-          <h5 class="card-title">{{ data.name }}</h5>
-          <p class="card-text">email - {{ data.email }}</p>
-          <p class="card-text">room number - {{ data.room_number }}</p>
-          <p class="card-text">when - {{ data.when }}</p>
-          <br>
-          <p class="card-text">description - {{ data.description }}</p>
-        </div>
+    <div class="card-header">{{ data.subject }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ data.name }}</h5>
+      <p class="card-text">email - {{ data.email }}</p>
+      <p class="card-text">room number - {{ data.room_number }}</p>
+      <p class="card-text">when - {{ data.date_uploaded }}</p>
+      <br>
+      <p class="card-text">description - {{ data.description }}</p>
     </div>
-{% endfor %}
-  
+  </div>
 
+
+  {% else %}
+    <div class="card bg-danger mb-3" style="max-width: 18rem;">
+
+      <div class="card-header">{{ data.subject }}</div>
+      <div class="card-body">
+        <h5 class="card-title">{{ data.name }}</h5>
+        <p class="card-text">email - {{ data.email }}</p>
+        <p class="card-text">room number - {{ data.room_number }}</p>
+        <p class="card-text">when - {{ data.date_uploaded }}</p>
+        <br>
+        <p class="card-text">description - {{ data.description }}</p>
+      </div>
+    </div>
+
+  {% endif %}
+{% endfor %}
 {% endblock %}

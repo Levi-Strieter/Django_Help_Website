@@ -8572,10 +8572,10 @@
     margin-right: 3rem !important;
   }
   
-  .mb-5,
+  /* .mb-5,
   .my-5 {
     margin-bottom: 3rem !important;
-  }
+  } */
   
   .ml-5,
   .mx-5 {
@@ -10874,3 +10874,9 @@
   .copyright {
     background-color: #1a252f;
   }
+
+  .navbar {
+    color: #1abc9c;
+  }
+
+
