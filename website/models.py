@@ -34,7 +34,7 @@ class HelpFormModel(models.Model):
     room_number = models.CharField(max_length=6)
     email = models.EmailField(default="@k12.wv.us")
     subject = models.CharField(max_length=30)
-    description = models.CharField(max_length=50)
+    description = models.TextField()
     date_uploaded = models.DateField(default=now())
 
     def __unicode__(self):
@@ -44,7 +44,7 @@ class HelpFormModel(models.Model):
 class FaqFormModel(models.Model):
     subject = models.CharField(max_length=10, choices=FAQ_CHOICES, default="other")
     question = models.CharField(max_length=50, default="")
-    answer = models.CharField(max_length=50)
+    answer = models.TextField()
     date_uploaded = models.DateField(default=now())
 
     def __unicode__(self):
@@ -54,7 +54,7 @@ class FaqFormModel(models.Model):
 class VideoFormModel(models.Model):
     subject = models.CharField(max_length=10, choices=FAQ_CHOICES, default="other")
     youtube_unique_code = models.CharField(max_length=11)
-    vid_name = models.CharField(max_length=20, blank=False, default="Core Help-")
+    vid_name = models.CharField(max_length=50, blank=False, default="Core Help-")
 
     def __unicode__(self):
         return self.Name + ": " +str(self.id)

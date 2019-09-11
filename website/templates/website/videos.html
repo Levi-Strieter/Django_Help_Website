@@ -3,19 +3,10 @@
 {% block content %}
 
 <style>
-  .row {
-    margin-left: 10%; 
-    
+  .d-inline-block {
+      margin: 20px;
+      text-align: center;
   }
-
-  .container-fluid {
-      display: inline-block;
-  }
-  
-   span {
-    font-size: 15px;
-  }
-
 
   .box {
     padding: 60px 0px;
@@ -50,27 +41,19 @@
     <span>Upload video to be posted for all the world to see?.</span>
   </div>
   
-    {% for data in data %}
-    
-      {% if data.subject == "Ipad" %}
-      
-      <div class="container-fluid pb-video-container">
-      <div class="col-md-10 col-md-offset-1">
-          
-          <div class="row pb-row">
-              
-              <div>
-                  <div class="col-md-3 pb-video">                            
 
-                          <iframe width="500" height="300" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
-                      </div>
-              </div>
-          </div>
-      </div>
-  </div>
-      {% endif %}
-    {% endfor %}
+  {% for data in data %}
+    
+    {% if data.subject == "Ipad" %}  
+    <div class="d-inline-block">                          
+
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
+
+    </div>
+
+    {% endif %}
+  {% endfor %}
   
 </div>
     
@@ -84,27 +67,19 @@
     <span>Upload video to be posted for all the world to see?.</span>
   </div>
   
-    {% for data in data %}
-    
-      {% if data.subject == "mac" %}
-      
-      <div class="container-fluid pb-video-container">
-      <div class="col-md-10 col-md-offset-1">
-          
-          <div class="row pb-row">
-              
-              <div>
-                  <div class="col-md-3 pb-video">                            
 
-                          <iframe width="500" height="300" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
-                      </div>
-              </div>
-          </div>
-      </div>
-  </div>
-      {% endif %}
-    {% endfor %}
+  {% for data in data %}
+    
+    {% if data.subject == "mac" %}  
+    <div class="d-inline-block">                          
+
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
+
+    </div>
+
+    {% endif %}
+  {% endfor %}
   
 </div>
 
@@ -118,27 +93,19 @@
     <span>Upload video to be posted for all the world to see?.</span>
   </div>
   
-    {% for data in data %}
-    
-      {% if data.subject == "keynote" %}
-      
-      <div class="container-fluid pb-video-container">
-      <div class="col-md-10 col-md-offset-1">
-          
-          <div class="row pb-row">
-              
-              <div>
-                  <div class="col-md-3 pb-video">                            
 
-                          <iframe width="500" height="300" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
-                      </div>
-              </div>
-          </div>
-      </div>
-  </div>
-      {% endif %}
-    {% endfor %}
+  {% for data in data %}
+    
+    {% if data.subject == "keynote" %}  
+    <div class="d-inline-block">                          
+
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
+
+    </div>
+
+    {% endif %}
+  {% endfor %}
   
 </div>
 
@@ -152,27 +119,19 @@
     <span>Upload video to be posted for all the world to see?.</span>
   </div>
   
-    {% for data in data %}
-    
-      {% if data.subject == "pages" %}
-      
-      <div class="container-fluid pb-video-container">
-      <div class="col-md-10 col-md-offset-1">
-          
-          <div class="row pb-row">
-              
-              <div>
-                  <div class="col-md-3 pb-video">                            
 
-                          <iframe width="500" height="300" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
-                      </div>
-              </div>
-          </div>
-      </div>
-  </div>
-      {% endif %}
-    {% endfor %}
+  {% for data in data %}
+    
+    {% if data.subject == "pages" %}  
+    <div class="d-inline-block">                          
+
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
+
+    </div>
+
+    {% endif %}
+  {% endfor %}
   
 </div>
 
@@ -186,27 +145,19 @@
     <span>Upload video to be posted for all the world to see?.</span>
   </div>
   
-    {% for data in data %}
-    
-      {% if data.subject == "imovie" %}
-      
-      <div class="container-fluid pb-video-container">
-      <div class="col-md-10 col-md-offset-1">
-          
-          <div class="row pb-row">
-              
-              <div>
-                  <div class="col-md-3 pb-video">                            
 
-                          <iframe width="500" height="300" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
-                      </div>
-              </div>
-          </div>
-      </div>
-  </div>
-      {% endif %}
-    {% endfor %}
+  {% for data in data %}
+    
+    {% if data.subject == "imovie" %}  
+    <div class="d-inline-block">                          
+
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
+
+    </div>
+
+    {% endif %}
+  {% endfor %}
   
 </div>
 
@@ -220,62 +171,45 @@
     <span>Upload video to be posted for all the world to see?.</span>
   </div>
   
-    {% for data in data %}
-    
-      {% if data.subject == "schoology" %}
-      
-      <div class="container-fluid pb-video-container">
-      <div class="col-md-10 col-md-offset-1">
-          
-          <div class="row pb-row">
-              
-              <div>
-                  <div class="col-md-3 pb-video">                            
 
-                          <iframe width="500" height="300" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
-                      </div>
-              </div>
-          </div>
-      </div>
-  </div>
-      {% endif %}
-    {% endfor %}
+  {% for data in data %}
+    
+    {% if data.subject == "schoology" %}  
+    <div class="d-inline-block">                          
+
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
+
+    </div>
+
+    {% endif %}
+  {% endfor %}
   
 </div>
 
 <div class="center"></div>
-<div class="box-part text-center">
+<div class="box-part">
   
-  <div class="title">
+  <div class="title text-center">
     <h4>Other</h4>
   </div>
-  <div class="text">
+  <div class="text text-center">
     <span>Upload video to be posted for all the world to see?.</span>
   </div>
   
-    {% for data in data %}
-    
-      {% if data.subject == "other" %}
-      
-      <div class="container-fluid pb-video-container">
-      <div class="row">
-          
-          <div class="col-md-6 col-lg-4 ">
-              
-              
-                  <div class="pb-video">                            
 
-                          <iframe width="300" height="200" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
-                      </div>
-              
-          </div>
-      </div>
-  </div>
-      {% endif %}
-    {% endfor %}
-  
+  {% for data in data %}
+    
+    {% if data.subject == "other" %}  
+    <div class="d-inline-block">                          
+
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/{{data.youtube_unique_code}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <label class="form-control label-warning text-center">{{ data.vid_name }}</label>
+
+    </div>
+
+    {% endif %}
+  {% endfor %}
 </div>
 
 {% endblock %}

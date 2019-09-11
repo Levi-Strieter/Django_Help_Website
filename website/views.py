@@ -3,6 +3,8 @@ import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from django.forms import forms
 from django.views.generic.edit import DeleteView
+from django.views.generic import ListView
+from django.db.models import Q
 from django.utils import timezone
 from django.utils.timezone import now
 from django.contrib import messages
@@ -58,7 +60,16 @@ def help_form(request):
  
         return render(request, "website/help_form.html", {'form': form})
 
+class SearchResultsView(ListView):
+    model = FaqFormModel
+    template_name = 'website/search_results.html'
 
+    def get_queryset(self): # new
+        query = self.request.GET.get('q')
+        object_list = FaqFormModel.objects.filter(
+            Q(question__icontains=query) | Q(subject__icontains=query)
+        )
+        return object_list
 @login_required
 def team_homepage(request):
     return render(request, 'website/team_page.html')

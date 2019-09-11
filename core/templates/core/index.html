@@ -44,7 +44,7 @@
     <div class="container">
 
       <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Easily Answered</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Search For Help</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom">
@@ -55,10 +55,66 @@
         <div class="divider-custom-line"></div>
       </div>
 
-      <!-- Portfolio Grid Items -->
       <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <form action="{% url 'search_results' %}" method="get">
+            <div class="control-group">
+                <div class="row">
+                    <div class="col-lg-4 ml-auto">
+                      <p class="lead">Asking a question is simple. Either search a specific question ex. <i>how to screen mirror</i> or search a broad subject ex. <i>Keynote</i></p>
+                    </div>
+                    <div class="col-lg-4 mr-auto">
+                      <p class="lead">If the question you asked does not have a answer try rewording the question or visiting the dedicated FAQ section. Thank You!</p>
+                    </div>
+                  </div>
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label></label>
+                  <input class="form-control" name="q" type="text" placeholder="Search..." required="required" data-validation-required-message="Please enter a subject or question to search for.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Search</button>
+            </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- <form action="{% url 'search_results' %}" method="get">
+        <input name="q" type="text" placeholder="Search...">
+      </form> -->
 
-        <!-- Portfolio Item 1 -->
+
+    </section>
+
+    <!-- About Section -->
+    <section class="page-section bg-primary text-white mb-0" id="about">
+      <div class="container">
+  
+        <!-- About Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-white">Mission Statement</h2>
+  
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+        
+        <h4 class="text-center"><i>"Helping all the way to the core of the core of the Quesiton"</i></h4>
+        <br>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NU0-IPlXFsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+      </div>
+
+
+
+      <!-- Portfolio Grid Items -->
+      <!-- <div class="row">
+
         <div class="  ">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -70,7 +126,6 @@
           </div>
         </div>
 
-        <!-- Portfolio Item 2 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -82,7 +137,6 @@
           </div>
         </div>
 
-        <!-- Portfolio Item 3 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -94,7 +148,6 @@
           </div>
         </div>
 
-        <!-- Portfolio Item 4 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -106,7 +159,6 @@
           </div>
         </div>
 
-        <!-- Portfolio Item 5 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -118,7 +170,6 @@
           </div>
         </div>
 
-        <!-- Portfolio Item 6 -->
         <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -130,18 +181,18 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
       <!-- /.row -->
 
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="page-section bg-primary text-white mb-0" id="about">
+  <section class="page-section  mb-0" id="about">
     <div class="container">
 
       <!-- About Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-white">Ask A Question</h2>
+      <h2 class="page-section-heading text-center text-uppercase">Ask A Question</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom divider-light">
@@ -164,8 +215,8 @@
 
       <!-- About Section Button -->
       <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-light" href="/core/help_form">
-          <i class="fas fa-arrow-right"></i>
+        <a class="btn btn-xl bg-primary" href="/core/help_form">
+          <i class="fas fa-arrow-right bg-primary"></i>
           Continue
         </a>
       </div>
