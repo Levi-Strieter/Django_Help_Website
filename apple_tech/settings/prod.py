@@ -36,8 +36,7 @@ ALLOWED_HOSTS = []
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
-# This is new
-del DATABASES['default']['OPTIONS']['sslmode']
+
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
