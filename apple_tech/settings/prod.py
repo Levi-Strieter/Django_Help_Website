@@ -31,8 +31,8 @@ TEMPLATES = [
     },
 ]
 
-DEBUG = False
-ALLOWED_HOSTS = []
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
@@ -43,7 +43,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 LOGIN_REDIRECT_URL = '/core/dashboard'
@@ -52,10 +52,6 @@ LOGIN_REDIRECT_URL = '/core/dashboard'
 #heroku production postgres stuff
 # This line should already exist in your settings.py
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# This is new:
-dotenv_file = os.path.join(BASE_DIR, ".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
 
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
