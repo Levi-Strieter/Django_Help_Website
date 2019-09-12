@@ -31,7 +31,7 @@ TEMPLATES = [
     },
 ]
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # Activate Django-Heroku.
