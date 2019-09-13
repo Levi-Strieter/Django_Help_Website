@@ -11,6 +11,15 @@
   height: 35%;
 }
 
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    iframe {
+      width: 300px;
+      height: 100px;
+    }
+}
 
 </style>
 
@@ -103,87 +112,12 @@
           <div class="divider-custom-line"></div>
         </div>
         
-        <h4 class="text-center"><i>"Helping all the way to the core of the core of the Quesiton"</i></h4>
+        <h4 class="text-center"><i>"Helping all the way to the core of the Quesiton"</i></h4>
         <br>
 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/NU0-IPlXFsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   
       </div>
-
-
-
-      <!-- Portfolio Grid Items -->
-      <!-- <div class="row">
-
-        <div class="  ">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="{% static 'core/img/portfolio/cabin.png' %}" alt=""></a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="{% static 'core/img/portfolio/cake.png' %}" alt="">
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="{% static 'core/img/portfolio/circus.png' %}" alt="">
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="{% static 'core/img/portfolio/game.png' %}" alt="">
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="{% static 'core/img/portfolio/safe.png' %}" alt="">
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="{% static 'core/img/portfolio/submarine.png' %}" alt="">
-          </div>
-        </div>
-
-      </div> -->
-      <!-- /.row -->
-
     </div>
   </section>
 
@@ -222,70 +156,7 @@
       </div>
 
     </div>
-  <!-- </section>
 
-  <section class="page-section portfolio" id="portfolio">
-    <div class="container">
-
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">See Our Twitter</h2>
-
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-    </div>
-
-    <a class="twitter-follow-button"
-    href="https://twitter.com/TwitterDev"
-    data-size="large">
-    Follow @TwitterDev</a>
-
-    <a class="twitter-timeline"
-    href="https://twitter.com/twitterdev">
-    Tweets by @TwitterDev
-    </a>
-
-
-  
-  </section> -->
-
-  <!-- Contact Section -->
-  <!-- <section class="page-section" id="contact">
-    <div class="container">
-
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Ask A Question</h2>
-
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div> -->
-
-      <!-- Contact Section Form
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-\          <form name="sentMessage" id="contactForm" method="POST" action="." novalidate>
-            <div class="control-group">
-                <div class="alert alert-danger" role="alert">
-                </div>
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label></label>
-                  <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Join</button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-    </div> -->
   </section>
   
   <!-- Bootstrap core JavaScript -->
