@@ -20,6 +20,10 @@ h1{
   text-align: center;
 
 }
+.badge {
+  margin: 10px;
+  padding: 10px;
+}
 </style>
 
 
@@ -34,8 +38,10 @@ h1{
 
 {% for data in data %}
   {% if today == data.date_uploaded %}
-  <div class="card bg-light mb-3" style="max-width: 18rem;">
 
+
+  <div class="card bg-light mb-3" style="max-width: 18rem;">
+    <span class="badge badge-pill badge-primary float-right"><i class="fas fa-thumbs-up"></i></span>
     <div class="card-header">{{ data.subject }}</div>
     <div class="card-body">
       <h5 class="card-title">{{ data.name }}</h5>
@@ -49,7 +55,8 @@ h1{
 
 
   {% else %}
-    <div class="card bg-danger mb-3" style="max-width: 18rem;">
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <span class="badge badge-pill badge-danger float-right"><i class="fas fa-thumbs-down"></i></span>
 
       <div class="card-header">{{ data.subject }}</div>
       <div class="card-body">
